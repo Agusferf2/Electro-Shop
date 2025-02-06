@@ -2,7 +2,8 @@
 
 :root {
     --primary-color: #d90429;
-    --primary-color-dark: #dc062ae1;
+    --primary-color-dark: #d20023e1;
+    --secondary-color: rgb(34, 34, 34);
 }
 
 * {
@@ -11,7 +12,10 @@
     box-sizing: border-box;
     font-family: Verdana, Geneva, Tahoma, sans-serif; 
 }
-
+html {
+  scroll-behavior: smooth;
+  height: 100vh;
+}
 .header_up {
   display: flex;
   align-items: center;
@@ -32,7 +36,7 @@ header{
   justify-content: space-between;
   align-items: center;
   padding: 1em;
-  background-color: rgb(34, 34, 34);
+  background-color: var(--secondary-color);
   color: #fff;
   border-bottom: .2em solid var(--primary-color-dark); 
 }
@@ -128,4 +132,90 @@ header{
 
 .categoriesButton:hover{
   color: var(--primary-color);
+}
+#productos-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.product-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 1em;
+  padding: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  width: 18em;
+  height: 25em;
+  overflow: hidden;
+  text-align: center;
+  font-size: 1em;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  height: 10em;
+  gap: .6em;
+}
+
+.product-image {
+  max-height: 10em;
+  object-fit: contain;
+}
+
+.product-name {
+  font-family: "Montserrat", serif;
+  font-weight: 700;
+  color: #000;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+.product-price {
+  font-family: "Montserrat", serif;
+  font-weight: 800;
+  color: var(--primary-color);
+  font-size: 1.2em;
+}
+
+.add-to-cart-button {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1em;
+  font-family: "Montserrat", serif;
+  font-weight: 700;
+  transition: all .3s ease-in-out;
+}
+
+.add-to-cart-button:hover {
+  background-color: var(--primary-color-dark);
+}
+
+.no-results {
+  font-family: "Montserrat", serif;
+  font-weight: 700;
+  color: #000;
+  font-size: 1.2em;
+  text-align: center;
+  margin: 2em;
+}
+
+footer {
+  background-color: var(--secondary-color);
+  color: #fff;
+  padding: 1em;
+  text-align: center;
+  font-family: "Montserrat", serif;
+  font-weight: 700;
 }
