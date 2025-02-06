@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root {
     --primary-color: #d90429;
     --primary-color-dark: #dc062ae1;
@@ -21,6 +23,8 @@
 
 .header_text {
   font-size: 1em;
+  font-family: "Montserrat", serif;
+  font-weight: 600;
 }
 
 header{
@@ -52,8 +56,7 @@ header{
   font-size: 1em;
   background-color: #fff;
   width: 25em;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  
+  font-family: "Montserrat", serif;  
 }
 
 #buscador:focus {
@@ -85,4 +88,44 @@ header{
 
 .icon-shopping-cart:hover {
   fill: var(--primary-color);
+}
+
+.categoriesNav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.categoriesList{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row; 
+  list-style: none;
+  padding: 1em;
+  margin-right: 1em;
+}
+
+.categoriesNav h1 {
+  color: #000;
+  padding: 1em;
+  margin-left: 2em;
+  font-family: "Montserrat", serif;
+  font-weight: 700;
+}
+
+.categoriesButton {
+  font-family: "Montserrat", serif;
+  font-weight: 700;
+  color: #8d99ae;
+  text-decoration: none;
+  font-size: 1em;
+  cursor: pointer;
+  margin: .7em;
+  transition: all .3s ease-in-out;
+}
+
+.categoriesButton:hover{
+  color: var(--primary-color);
 }

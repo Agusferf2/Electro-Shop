@@ -1,0 +1,40 @@
+{
+    "productos": [
+      {
+        "id": 101,
+        "nombre": "Monitor LG UltraGear 27''",
+        "descripcion": "Monitor gamer de 27 pulgadas con 144Hz y 1ms.",
+        "precio": 250000,
+        "categoria_id": 1
+      },
+      {
+        "id": 102,
+        "nombre": "Procesador AMD Ryzen 5 5600X",
+        "descripcion": "Procesador de 6 núcleos y 12 hilos con excelente rendimiento.",
+        "precio": 180000,
+        "categoria_id": 2
+      },
+      {
+        "id": 103,
+        "nombre": "Notebook ASUS ROG Strix G15",
+        "descripcion": "Laptop gamer con Ryzen 7 y RTX 3060.",
+        "precio": 850000,
+        "categoria_id": 3
+      },
+      {
+        "id": 104,
+        "nombre": "Teclado Mecánico Redragon Kumara K552",
+        "descripcion": "Teclado mecánico retroiluminado con switches Redragon Blue.",
+        "precio": 50000,
+        "categoria_id": 4
+      },
+      {
+        "id": 105,
+        "nombre": "Gabinete Corsair iCUE 400lldl0X RGB",
+        "descripcion": "Gabinete con panel de vidrio templado y tres ventiladores RGB.",
+        "precio": 200000,
+        "categoria_id": 5
+      }
+    ]
+  }
+  
