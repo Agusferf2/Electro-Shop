@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-    --primary-color: #d90429;
-    --primary-color-dark: #d20023e1;
+    --primary-color: #da0e30;
+    --primary-color-dark: #da0e30b6;
     --secondary-color: rgb(34, 34, 34);
 }
 
@@ -222,7 +222,7 @@ footer {
 
 /* Estilos del fondo del modal */
 .modal {
-  display: none; /* Oculto por defecto */
+  display: none;
   position: fixed;
   z-index: 1;
   left: 0;
@@ -237,10 +237,10 @@ footer {
 /* Contenido del modal */
 .modal-content {
   background-color: white;
-  padding: 20px;
+  padding: 0em 1em 1em 1em;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  width: 300px;
+  width: 50em;
   text-align: center;
 }
 
@@ -249,5 +249,77 @@ footer {
   color: red;
   font-size: 24px;
   font-weight: bold;
+  display: flex;
+  width:fit-content;
+  justify-self: flex-end;
   cursor: pointer;
+}
+
+.remove-from-cart-button {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.remove-from-cart-button:hover {
+  background-color: var(--primary-color-dark);
+}
+
+table{
+  border-collapse: collapse;
+  width: 100%;
+  text-align: center;
+}
+
+td {
+  text-align: center;
+  width: 10em;
+  border-bottom: 1px solid #ddd;
+  padding: 1em;
+}
+
+.total {
+  font-family: "Montserrat", serif;
+  font-weight: 700;
+  font-size: 1.2em;
+  text-align: center;
+  margin: 2em;
+}
+
+.checkout-button {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1em;
+  font-family: "Montserrat", serif;
+  font-weight: 700;
+}
+
+.checkout-button:hover {
+  background-color: var(--primary-color-dark);
+}
+
+.totalCarrito {
+  font-family: "Montserrat", serif;
+  font-weight: 700;
+  font-size: 1.2em;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+input[type=number] {
+  width: 5em;
+  font-size: 1em;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 0.5em;
 }

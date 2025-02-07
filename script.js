@@ -16,7 +16,7 @@ function agregarCard(producto, productosContainer) {
             </div>
             <div class="product-info">
                 <h2 class="product-name">${producto.nombre}</h2>
-                <p class="product-price">$${producto.precio}</p>
+                <p class="product-price">$${producto.precio.toLocaleString('es-ES')}</p>
                 <button class="add-to-cart-button" data-id="${producto.id}">Agregar al carrito</button>
             </div>
         `;
@@ -79,7 +79,13 @@ document.addEventListener("click", async (event) => {
     const productos = await datos();
     const product = productos.find((producto) => producto.id == productId);
     const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
-    cartItems.push(product);
+    const existingItem = cartItems.find((item) => item.id == productId);
+    if (existingItem) {
+      existingItem.quantity += 1;
+    } else {
+      product.quantity = 1;
+      cartItems.push(product);
+    }
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
   }
 });
@@ -91,16 +97,54 @@ const displayCartItems = () => {
   cartItemsContainer.innerHTML = `
   <div class="modal-content">
             <span onclick="closerModal()" class="close">&times;</span>
+            <h1>Mi carrito</h1>
         </div>`;
   cartItems.forEach((item) => {
-    const cartItem = document.createElement("div");
+    const cartItem = document.createElement("table");
+    cartItem.classList.add("cart-item");
     cartItem.innerHTML = `
-            <img height="100px" src="${item.imagen}" alt="${item.nombre}">
-            <p>${item.nombre}</p>
-            <p>Precio: $${item.precio}</p>
-            <button class="remove-from-cart-button" data-id="${item.id}">Quitar del carrito</button>
+            <tr>
+                <td><img height="100px" src="${item.imagen}" alt="${item.nombre}"></td>
+                <td>${item.nombre}</td>
+                <td>$${item.precio.toLocaleString('es-ES')}</td>
+                <td>
+                  <input type="number" min="1" value="${item.quantity}" class="cart-quantity" data-id="${item.id}">
+                </td>
+                <td><button class="remove-from-cart-button" data-id="${item.id}">Eliminar</button></td>
+            </tr>
         `;
     cartItemsContainer.lastChild.appendChild(cartItem);
+  });
+
+  const totalCarrito = document.createElement("div");
+  totalCarrito.classList.add("totalCarrito");
+
+  cartItemsContainer.lastChild.appendChild(totalCarrito);
+  
+  const total = cartItems.reduce((acc, item) => acc + item.precio * item.quantity, 0);
+
+  totalCarrito.innerHTML = `<p class="total">Total: $${total.toLocaleString('es-ES')} </p>
+  <button class="checkout-button">Finalizar compra</button>`;
+
+  const checkoutButton = totalCarrito.querySelector(".checkout-button");
+  checkoutButton.addEventListener("click", () => {
+    localStorage.removeItem("cartItems");
+    closerModal();
+  });
+
+  // Update quantity in cart
+  document.querySelectorAll(".cart-quantity").forEach(input => {
+    input.addEventListener("change", (event) => {
+      const newQuantity = parseInt(event.target.value);
+      const productId = event.target.getAttribute("data-id");
+      const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+      const product = cartItems.find(item => item.id == productId);
+      if (product) {
+        product.quantity = newQuantity;
+        localStorage.setItem("cartItems", JSON.stringify(cartItems));
+        displayCartItems();
+      }
+    });
   });
 };
 
