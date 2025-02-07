@@ -87,17 +87,20 @@ document.addEventListener("click", async (event) => {
 // Muestra el carrito
 const displayCartItems = () => {
   const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
-  const cartItemsContainer = document.getElementById("cartItemsContainer");
-  cartItemsContainer.innerHTML = "";
+  const cartItemsContainer = document.getElementById("myModal");
+  cartItemsContainer.innerHTML = `
+  <div class="modal-content">
+            <span onclick="closerModal()" class="close">&times;</span>
+        </div>`;
   cartItems.forEach((item) => {
     const cartItem = document.createElement("div");
-    cartItem.classList.add("cart-item");
     cartItem.innerHTML = `
+            <img height="100px" src="${item.imagen}" alt="${item.nombre}">
             <p>${item.nombre}</p>
             <p>Precio: $${item.precio}</p>
             <button class="remove-from-cart-button" data-id="${item.id}">Quitar del carrito</button>
         `;
-    cartItemsContainer.appendChild(cartItem);
+    cartItemsContainer.lastChild.appendChild(cartItem);
   });
 };
 
@@ -114,4 +117,31 @@ document.addEventListener("click", async (event) => {
     localStorage.setItem("cartItems", JSON.stringify(newCartItems));
     displayCartItems();
   }
+});
+
+// Seleccionamos los elementos
+const modal = document.getElementById("myModal");
+const openModal = document.getElementById("openModal");
+const closeModal = document.querySelector(".close");
+
+// Mostrar modal cuando se haga clic en el botón
+function abrirModal() {
+    displayCartItems();
+    modal.style.display = "flex";
+}
+
+openModal.addEventListener("click", () => {
+    abrirModal();  
+});
+
+// Ocultar modal cuando se haga clic en la "X"
+function closerModal() { 
+    modal.style.display = "none";
+}
+
+// Ocultar modal si el usuario hace clic fuera de él
+window.addEventListener("click", (e) => {
+    if (e.target === modal) {
+        modal.style.display = "none";
+    }
 });
