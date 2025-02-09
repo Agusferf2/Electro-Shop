@@ -434,10 +434,30 @@ input[type=number] {
     }
 }
 
-@media screen and (max-width: 700px) {
-  .cart-item{
+@media screen and (max-width: 780px) {
+  td:nth-child(1){
+    display: none;
+  }
+}
+
+@media screen and (max-width: 560px) {
+
+  tr{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 0.5em;
+  }
+
+  td{
+    width: 100%;
+    border: none;
+    padding: 0.5em;
+  }
+
+  .modal-content h1{
+    padding-bottom: .5em ;
   }
 }
 
@@ -445,11 +465,16 @@ input[type=number] {
   body{
     font-size: 12px;
   }
-
   .categoriesList {
     width: 40%;
   }
   .searcher{
     width: 80%;
+  }
+  .totalCarrito {
+    flex-direction: column;
+  }
+  .total{
+    margin: 1em;
   }
 }
