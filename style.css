@@ -242,6 +242,9 @@ footer {
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   width: 50em;
   text-align: center;
+  overflow-y: auto;
+  scrollbar-width:none;
+  max-height: 90vh;
 }
 
 /* Botón para cerrar */
@@ -269,7 +272,7 @@ footer {
   background-color: var(--primary-color-dark);
 }
 
-table{
+.cart-item{
   border-collapse: collapse;
   width: 100%;
   text-align: center;
@@ -322,4 +325,131 @@ input[type=number] {
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 0.5em;
+}
+.hamburguesa {
+  display: none;
+  cursor: pointer;
+  background-color: var(--secondary-color);
+  border: none;
+  color: #fff;
+}
+
+@media screen and (max-width: 930px) {
+  body{
+    font-size: 14px;
+  }
+
+  header{
+    flex-direction: column;
+    gap: 1em;
+    padding: .5em;
+  }
+
+  .header-buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    height: 4em;
+  }
+  
+  #logoHeader{
+    margin: 0;
+  }
+  
+  .icon-shopping-cart {
+    margin-right: 0;
+  }
+
+  .modal-content {
+    width: 80%;
+  }
+
+  .hamburguesa {
+    margin: 0;
+    font-size: 2.3em;
+    display: block;
+  }
+
+  .categoriesList {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    background-color: var(--secondary-color);
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 30%;
+    margin: 0;
+  }
+
+  .categoriesList li {
+    display: block;  
+    font-size: 1.2em;
+  }
+
+  .categoriesList.active {
+    display: flex;
+  }
+
+  .menu-activador {
+    width: 30px;
+    height: 20px;
+    margin: 100px auto;
+  }
+    
+  .hamburguesa {
+      position: absolute;
+      left: -9999px;
+    }
+
+    label {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;  
+      cursor: pointer;
+    }
+    .menu-activador-linea {
+      height: 2px;
+      background-color: #fff;
+      opacity: 1;
+      transform: translateY(0) rotate(0);
+      transition: all 0.3s;
+    }
+    #hamburguesa:checked ~ label .menu-activador-linea {
+      &:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+      }
+      &:nth-child(2) {
+        opacity: 0;
+      }
+      &:nth-child(3) {
+        transform: translateY(-9px)rotate(-45deg);
+      }
+    }
+}
+
+@media screen and (max-width: 700px) {
+  .cart-item{
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  body{
+    font-size: 12px;
+  }
+
+  .categoriesList {
+    width: 40%;
+  }
+  .searcher{
+    width: 80%;
+  }
 }

@@ -189,3 +189,18 @@ window.addEventListener("click", (e) => {
         modal.style.display = "none";
     }
 });
+
+const hamburguesa = document.querySelector(".hamburguesa");
+hamburguesa.addEventListener("click", () => {
+  const nav = document.querySelector(".categoriesList");
+  nav.classList.toggle("active");
+});
+
+document.querySelectorAll(".categoriesList li").forEach((li) => {
+  li.addEventListener("click", () => {
+    hamburguesa.checked = false;
+    const nav = document.querySelector(".categoriesList");
+    nav.classList.remove("active");
+  });
+});
+
