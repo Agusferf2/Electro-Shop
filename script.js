@@ -1,4 +1,4 @@
-const link = "http://localhost:3000/productos";
+const link = "https://api-electroshop.onrender.com/productos";
 
 // LLamar a la API
 async function datos() {
