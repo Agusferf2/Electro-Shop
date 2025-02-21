@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crud Electro Shop</title>
+    <link rel="stylesheet" href="crudStyles.css">
+</head>
+<body>
+    <header>
+        <img src="./assets/logo.png" id="logoHeader" alt="Smart Shop Logo">
+    </header>
+    <div class="container">
+        <form action="" class="form">
+            <p class="title">Agregar producto </p>
+                <label>
+                    <input required="" name="nombre" type="text" class="input">
+                    <span>Nombre</span>
+                </label>
+        
+                <label>
+                    <input required="" name="precio" type="number" class="input">
+                    <span>Precio</span>
+                </label>
+            <label>
+                <select class="select" name="categoria_id" id="" required>
+                    <option value="" disabled selected></option>
+                    <option value="1">Monitores</option>
+                    <option value="2">Componentes</option>
+                    <option value="3">Notebooks</option>
+                    <option value="4">Perifericos</option>
+                    <option value="5">Gabinetes</option>
+                </select>
+                <span>Categoría</span>
+            </label>
+                    
+            <label>
+                <input required="" name="imagen" type="text" class="input">
+                <span>URL imagen</span>
+            </label> 
+            <button class="submit">Agregar</button>
+    </form>
+    <div class="productos-container">
+       
+    </div>
+    </div>
+    <script type="module" src="./js/crud/main.js"></script>
+</body>
+</html>
