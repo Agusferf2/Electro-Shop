@@ -2,7 +2,7 @@ import { datos } from "../api.js";
 
 export async function modifyProduct(event) {
     document.querySelector(".title").textContent = "Modificar producto";
-    const btnAgregar = document.querySelector(".agregar");
+    const btnAgregar = document.querySelector(".submit");
     btnAgregar.textContent = "Modificar"
     btnAgregar.classList.remove("agregar");
     btnAgregar.classList.add("modify");
@@ -22,13 +22,15 @@ export async function modifyProduct(event) {
     inputcategoria.value = product.categoria_id;
 
     const form = document.querySelector(".form");
-    form.addEventListener("submit", async (event) => {
+    form.onsubmit = async (event) => {
         event.preventDefault();
         const formData = new FormData(form);
         const nombre = formData.get("nombre");
-        const precio = formData.get("precio");
+        const precio = Number(formData.get("precio"));
+        console.log(typeof precio);
         const imagen = formData.get("imagen");
         const categoria_id = formData.get("categoria_id");
+        console.log(nombre, precio, imagen, categoria_id, productId);
         const response = await fetch(`https://api-electroshop.onrender.com/productos/${productId}`, {
             method: "PUT",
             headers: {
@@ -43,5 +45,5 @@ export async function modifyProduct(event) {
         btnAgregar.textContent = "Agregar";
         btnAgregar.classList.remove("modify");
         btnAgregar.classList.add("agregar");
-    });
+    };
 }

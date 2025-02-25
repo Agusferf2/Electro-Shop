@@ -19,5 +19,6 @@ productosContainer.addEventListener("click", function (event) {
     }
     if (event.target.classList.contains("modify-button")) {
         modifyProduct(event);
+        window.scrollTo({top: 0, behavior: 'smooth'});
     }
 });
