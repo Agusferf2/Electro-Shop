@@ -58,7 +58,7 @@ form {
     letter-spacing: -1px;
     position: relative;
     display: flex;
-    align-items: center;
+    text-align: center;
   }
 .form label {
     position: relative;
@@ -143,4 +143,31 @@ form {
   }
   .remove-button:hover {
     background-color: var(--primary-color-dark);
+  }
+
+  @media screen and (max-width: 1050px) {
+    .container{
+      flex-direction: column;
+      align-items: center;
+      gap: 1em;
+    }
+
+    form, .productos-container{
+      width: 90%;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    body{
+      font-size: 14px;
+    }
+    .container, td{
+      padding: 0.5em;
+    }
+    tr td:first-child{
+      display: none;
+    }
+    form, .productos-container{
+      width: 100%;
+    }
   }
