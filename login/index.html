@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login y Registro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <button id="btnAtras" onclick="history.back()"> 
+            <img src="../assets/btnAtras.png" alt="flecha"> 
+        </button>
+        <img src="../assets/logo.png" id="logoHeader" alt="Smart Shop Logo">
+    </header>
+    <div class="container">
+    <form class="form">
+        <div id="login-container">
+            <p class="form-title">Iniciar Sesión</p>
+            <input placeholder="Usuario" id="login-user" type="text">
+            <input placeholder="Contraseña" id="login-pass" type="password">
+            <button class="submit" type="submit">
+                Iniciar Sesión
+            </button>
+
+            <p class="signup-link"> ¿No tienes cuenta?
+                <a href="#" onclick="showRegister()">Registrate</a>
+            </p>
+            <p id="login-msg" class="msg"></p>
+        </div>
+
+
+        <div id="register-container" class="hidden">
+            <p class="form-title">Registro</p>
+            <input placeholder="Usuario" id="register-user" type="text">
+            <input placeholder="Contraseña" id="register-pass" type="password">
+            <button class="submit" type="submit">
+                Registrar
+            </button>
+
+            <p class="signup-link"> ¿Ya tienes cuenta?
+                <a href="#" onclick="showLogin()">Inicia Sesión</a>
+            </p>
+            <p id="register-msg" class="msg"></p>
+        </div>
+    </form>
+</div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

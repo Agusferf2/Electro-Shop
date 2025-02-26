@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+:root {
+    --primary-color: #da0e30;
+    --primary-color-dark: #da0e30b6;
+    --secondary-color: #222222;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    background-color: var(--secondary-color);
+    color: #fff;
+    border-bottom: .2em solid var(--primary-color-dark);
+}
+
+#btnAtras {
+    height: 1.5em;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background-color: var(--secondary-color);
+    z-index: 100;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#btnAtras img {
+    height: 1.5em;
+}
+
+#logoHeader {
+    cursor: pointer;
+    width: 10em;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+    width: 100vw;
+    background-color: #e8e8e8;
+}
+
+.form {
+    background-color: #fff;
+    padding: 1.5em;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.form-title {
+    font-family: "Inter", serif;
+    font-size: 1.5em;
+    font-weight: 700;
+    text-align: center;
+    color: #000;
+}
+
+input {
+    display: flex;
+    width: 25em;
+    border-color: #e5e7eb;
+    border-radius: 8px;
+    border-style: solid;
+    border-width: 0.8px;
+    box-shadow: #0000000d 0px 1px 2px 0px;
+    font-size: 1em;
+    margin: 8px 0px;
+    padding: 16px 48px 16px 16px;
+}
+
+.submit {
+    width: 100%;
+    padding: 1em;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: .9em;
+    font-weight: 600;
+    margin-top: 1em;
+}
+
+.submit:hover {
+    background: var(--primary-color-dark);
+}
+
+.msg {
+    text-align: center;
+    color: red;
+    font-size: 14px;
+}
+
+.hidden {
+    display: none;
+}
+
+.signup-link {
+    color: #6B7280;
+    font-size: .8em;
+    margin: 1em 0;
+    text-align: center;
+}
+
+.signup-link a {
+    text-decoration: underline;
+}
