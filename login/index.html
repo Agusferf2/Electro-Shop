@@ -16,12 +16,12 @@
         <img src="../assets/logo.png" id="logoHeader" alt="Smart Shop Logo">
     </header>
     <div class="container">
-    <form class="form">
+    <form class="form" novalidate>
         <div id="login-container">
             <p class="form-title">Iniciar Sesión</p>
-            <input placeholder="Usuario" id="login-user" type="text">
-            <input placeholder="Contraseña" id="login-pass" type="password">
-            <button class="submit" type="submit">
+            <input placeholder="Usuario" id="login-user" type="text" required>
+            <input placeholder="Contraseña" id="login-pass" type="password" required>
+            <button id="login-btn" class="submit" type="submit">
                 Iniciar Sesión
             </button>
 
@@ -34,9 +34,9 @@
 
         <div id="register-container" class="hidden">
             <p class="form-title">Registro</p>
-            <input placeholder="Usuario" id="register-user" type="text">
-            <input placeholder="Contraseña" id="register-pass" type="password">
-            <button class="submit" type="submit">
+            <input placeholder="Usuario" id="register-user" type="text" required>
+            <input placeholder="Contraseña" id="register-pass" type="password" required>
+            <button id="register-btn" class="submit" type="submit">
                 Registrar
             </button>
 
@@ -48,8 +48,8 @@
     </form>
 </div>
 
-
-    <script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bcryptjs@3.0.2/umd/index.min.js"></script>
+<script src="script.js"></script>
 </body>
 
 </html>
