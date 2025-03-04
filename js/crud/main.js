@@ -3,6 +3,35 @@ import { agregarProducto } from "./add.js";
 import { deleteProduct } from "./delete.js";
 import { modifyProduct } from "./modify.js";
 
+document.addEventListener("DOMContentLoaded", async () => {
+    const token = localStorage.getItem("token");
+  
+    if (!token) {
+      window.location.href = "index.html"; 
+      return;
+    }
+  
+    try {
+      const response = await fetch("https://api-electroshop.onrender.com/verificar-token", {
+        method: "POST",
+        headers: {
+          "Authorization": `Bearer ${token}`,
+          "Content-Type": "application/json"
+        }
+      });
+  
+      if (!response.ok) {
+        throw new Error("Token inválido o expirado");
+      }
+  
+      console.log("Token válido, acceso permitido");
+    } catch (error) {
+      console.log(error.message);
+      localStorage.removeItem("token"); 
+      window.location.href = "index.html"; 
+    }
+  });
+  
 mostrarProductos();
 
 document.addEventListener("click", function (event) {
