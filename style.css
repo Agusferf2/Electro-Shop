@@ -19,7 +19,7 @@ html {
 .header_up {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   background-color: rgb(0, 0, 0);
   color: var(--primary-color);
   padding: 1em;
@@ -87,7 +87,13 @@ header{
   fill: #fff;
   width: 40px;
   cursor: pointer;
-  margin-right: 4em;
+}
+.header-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1em;
 }
 
 .icon-shopping-cart:hover {
@@ -331,7 +337,16 @@ input[type=number] {
   cursor: pointer;
   background-color: var(--secondary-color);
   border: none;
-  color: #fff;
+}
+
+#logoutButton{
+  display: none;
+}
+#loginButton, #logoutButton {
+  cursor: pointer;
+}
+#loginButton:hover, #logoutButton:hover {
+  color: var(--primary-color);
 }
 
 @media screen and (max-width: 930px) {

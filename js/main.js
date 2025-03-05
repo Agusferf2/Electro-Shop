@@ -39,3 +39,36 @@ window.addEventListener("click", (e) => {
     modal.style.display = "none";
   }
 });
+const btnLogin = document.querySelector("#loginButton");
+const btnLogout = document.querySelector("#logoutButton");
+
+document.addEventListener("DOMContentLoaded", async () => {
+const token = localStorage.getItem("token");
+try {
+  const response = await fetch("https://api-electroshop.onrender.com/verificar-token", {
+    method: "POST",
+    headers: {
+      "Authorization": `Bearer ${token}`,
+      "Content-Type": "application/json"
+    }
+  });
+
+  if (!response.ok) {
+    throw new Error("Token inválido o expirado");
+  }
+  btnLogin.style.display = "none"; 
+  btnLogout.style.display = "block";
+} catch (error) {
+  btnLogin.style.display = "block"; 
+  btnLogout.style.display = "none";
+}
+});
+
+btnLogin.addEventListener("click", () => {
+    window.location.href = "./login/index.html";
+});
+
+btnLogout.addEventListener("click", () => {
+  localStorage.removeItem("token");
+  window.location.href = "./index.html";
+});
