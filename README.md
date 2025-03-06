@@ -1,15 +1,28 @@
-# Electro Shop
+# 🛒 Electro Shop
 
-Electro Shop es una plataforma de comercio electrónico dedicada a la venta de productos electrónicos. Los usuarios pueden explorar una amplia variedad de dispositivos, agregarlos a su carrito y completar su compra.
+**Electro Shop** es una plataforma de comercio electrónico especializada en la venta de productos electrónicos. Los usuarios pueden explorar un catálogo interactivo, agregar productos a su carrito y finalizar su compra de manera sencilla.
 
-## Características
+## ✨ Características
 
-- Catálogo interactivo de productos electrónicos
-- Búsqueda rápida por nombre de producto
-- Carrito de compras con opciones de modificación
-- Filtración por categorías de los productos
+✅ Catálogo dinámico con productos electrónicos
 
-## Tecnologías Utilizadas
+✅ Búsqueda rápida por nombre de producto
 
-- HTML - CSS - JavaScript
-- Fetch API para acceder a datos de productos desde un servidor remoto (json-server)
+✅ Filtrado por categorías para una mejor experiencia de usuario
+
+✅ Carrito de compras con opciones para modificar cantidades o eliminar productos
+
+✅ Sistema de autenticación con login y registro de usuarios
+
+✅ Almacenamiento seguro de credenciales con bcrypt
+
+✅ Generación de tokens con JWT para sesiones seguras
+
+✅ Interfaz intuitiva y adaptable a distintos dispositivos
+
+## 🛠️ Tecnologías Utilizadas
+
+- **Frontend:** HTML, CSS, JavaScript
+- **Backend:** JSON-Server para la API
+- **Seguridad:** Bcrypt para encriptación de contraseñas y JWT para autenticación
+- **Gestión de estado:** LocalStorage para persistencia del carrito de compras
