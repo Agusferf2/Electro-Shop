@@ -41,6 +41,7 @@ window.addEventListener("click", (e) => {
 });
 const btnLogin = document.querySelector("#loginButton");
 const btnLogout = document.querySelector("#logoutButton");
+const btnCrud = document.querySelector("#abrirCrud");
 
 document.addEventListener("DOMContentLoaded", async () => {
 const token = localStorage.getItem("token");
@@ -58,6 +59,7 @@ try {
   }
   btnLogin.style.display = "none"; 
   btnLogout.style.display = "block";
+  btnCrud.style.display = "block";
 } catch (error) {
   btnLogin.style.display = "block"; 
   btnLogout.style.display = "none";
@@ -71,4 +73,8 @@ btnLogin.addEventListener("click", () => {
 btnLogout.addEventListener("click", () => {
   localStorage.removeItem("token");
   window.location.href = "./index.html";
+});
+
+btnCrud.addEventListener("click", () => {
+  window.location.href = "./crud.html";
 });

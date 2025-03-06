@@ -51,3 +51,8 @@ productosContainer.addEventListener("click", function (event) {
         window.scrollTo({top: 0, behavior: 'smooth'});
     }
 });
+
+const btnHome = document.getElementById("btnHome");
+btnHome.addEventListener("click", function () {
+    window.location.href = "index.html";
+});

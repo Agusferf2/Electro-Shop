@@ -348,7 +348,13 @@ input[type=number] {
 #loginButton:hover, #logoutButton:hover {
   color: var(--primary-color);
 }
-
+#abrirCrud{
+  display: none;
+}
+#abrirCrud:hover{
+  cursor: pointer;
+  fill: var(--primary-color);
+}
 @media screen and (max-width: 930px) {
   body{
     font-size: 14px;

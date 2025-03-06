@@ -28,22 +28,17 @@ header{
     border-bottom: .2em solid var(--primary-color-dark); 
 }
 
-#btnAtras {
-  height: 1.5em;
+#btnHome {
   position: fixed;
   top: 10px;
   left: 10px;
-  background-color: var(--secondary-color);
+  background-color: transparent;
   z-index: 100;
   border: none;
   border-radius: 50%;
-  font-size: 25px;
   cursor: pointer;
 }
 
-#btnAtras img {
-  height: 1.5em;
-}
 #logoHeader {
     cursor: pointer;
     width: 10em;
